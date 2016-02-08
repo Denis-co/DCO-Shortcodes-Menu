@@ -1,5 +1,6 @@
 === DCO Shortcodes Menu ===
 Contributors: denisco
+Donate link: https://www.paypal.me/yadenis
 Tags: shortcode, shortcodes menu, editor, tinymce, insert shortcode
 Requires at least: 4.4
 Tested up to: 4.4
