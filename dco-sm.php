@@ -48,6 +48,7 @@ class DCO_SM {
             $fields = get_post_meta(get_the_ID(), '_dco_sm_fields', true);
             if (is_array($fields) && count($fields)) {
                 foreach ($fields as $index => $field) {
+                    $field = apply_filters('dco_sm_get_shortcodes_field', $field, $post);
                     $type = $this->get_field_type($field['type']);
                     if ($type) {
                         // Get fields for TinyMCE
@@ -72,7 +73,7 @@ class DCO_SM {
         }
         wp_reset_query();
 
-        echo "<script>var shortcodes = " . json_encode($tags) . "; var dco_sm_shortcodes_title = '" . esc_html__('Shortcodes', 'dco-sm') . "';</script>\n";
+        echo "<script>var shortcodes = " . json_encode($tags) . "; var dco_sm_shortcodes_title = '" . esc_html__('Shortcodes', 'dco-shortcodes-menu') . "';</script>\n";
     }
 
     // Declare script for new button

@@ -10,7 +10,7 @@ class DCO_SM_Field_Colorpicker {
     protected $fields = array();
 
     public function __construct() {
-        $this->title = esc_html__('Color Picker', 'dco-sm');
+        $this->title = esc_html__('Color Picker', 'dco-shortcodes-menu');
     }
     
     public function get_name() {

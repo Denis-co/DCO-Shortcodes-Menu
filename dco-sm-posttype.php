@@ -31,10 +31,10 @@ class DCO_SM_Posttype {
 
     public function manage_columns($columns) {
         unset($columns['date']);
-        $columns['title'] = __('Shortcode', 'dco-sm');
-        $columns['description'] = __('Description', 'dco-sm');
-        $columns['show_in_menu'] = __('Show in menu', 'dco-sm');
-        $columns['post_types'] = __('Post Types', 'dco-sm');
+        $columns['title'] = __('Shortcode', 'dco-shortcodes-menu');
+        $columns['description'] = __('Description', 'dco-shortcodes-menu');
+        $columns['show_in_menu'] = __('Show in menu', 'dco-shortcodes-menu');
+        $columns['post_types'] = __('Post Types', 'dco-shortcodes-menu');
 
         return $columns;
     }
@@ -83,13 +83,13 @@ class DCO_SM_Posttype {
             ?>
             <?php $show_in_menu = isset($_GET['show_in_menu']) ? $_GET['show_in_menu'] : ''; ?>
             <select name="show_in_menu">
-                <option value="0" <?php selected($show_in_menu, 0); ?>><?php _e('Show in menu', 'dco-sm'); ?>: <?php _e('Yes'); ?>/<?php _e('No'); ?></option>
-                <option value="yes" <?php selected($show_in_menu, 'yes'); ?>><?php _e('Show in menu', 'dco-sm'); ?>: <?php _e('Yes'); ?></option>
-                <option value="no" <?php selected($show_in_menu, 'no'); ?>><?php _e('Show in menu', 'dco-sm'); ?>: <?php _e('No'); ?></option>
+                <option value="0" <?php selected($show_in_menu, 0); ?>><?php _e('Show in menu', 'dco-shortcodes-menu'); ?>: <?php _e('Yes'); ?>/<?php _e('No'); ?></option>
+                <option value="yes" <?php selected($show_in_menu, 'yes'); ?>><?php _e('Show in menu', 'dco-shortcodes-menu'); ?>: <?php _e('Yes'); ?></option>
+                <option value="no" <?php selected($show_in_menu, 'no'); ?>><?php _e('Show in menu', 'dco-shortcodes-menu'); ?>: <?php _e('No'); ?></option>
             </select>
             <?php $filter_post_type = isset($_GET['filter_post_type']) ? $_GET['filter_post_type'] : ''; ?>
             <select name="filter_post_type">
-                <option value="0" <?php selected($filter_post_type, 0); ?>><?php _e('All post types', 'dco-sm'); ?></option>
+                <option value="0" <?php selected($filter_post_type, 0); ?>><?php _e('All post types', 'dco-shortcodes-menu'); ?></option>
                 <?php $post_types = get_post_types(array('_builtin' => false, 'public' => true), 'objects'); ?>
 
                 <?php if (post_type_exists('post')) : ?>
@@ -141,25 +141,25 @@ class DCO_SM_Posttype {
 
     public function register_posttype() {
         $labels = array(
-            'name' => __('Shortcodes', 'dco-sm'),
-            'singular_name' => __('Shortcode', 'dco-sm'),
-            'menu_name' => __('Shortcodes', 'dco-sm'),
-            'all_items' => __('DCO Shortcodes Menu', 'dco-sm'),
-            'add_new' => __('Add New', 'dco-sm'),
-            'add_new_item' => __('Add New Shortcode', 'dco-sm'),
+            'name' => __('Shortcodes', 'dco-shortcodes-menu'),
+            'singular_name' => __('Shortcode', 'dco-shortcodes-menu'),
+            'menu_name' => __('Shortcodes', 'dco-shortcodes-menu'),
+            'all_items' => __('DCO Shortcodes Menu', 'dco-shortcodes-menu'),
+            'add_new' => __('Add New', 'dco-shortcodes-menu'),
+            'add_new_item' => __('Add New Shortcode', 'dco-shortcodes-menu'),
             'edit' => __('Edit'),
-            'edit_item' => __('Edit Shortcode', 'dco-sm'),
-            'new_item' => __('New Shortcode', 'dco-sm'),
-            'view' => __('View', 'dco-sm'),
-            'view_item' => __('View Shortcode', 'dco-sm'),
-            'search_items' => __('Search Shortcode', 'dco-sm'),
-            'not_found' => __('No Shortcodes found', 'dco-sm'),
-            'not_found_in_trash' => __('No Shortcodes found in Trash', 'dco-sm'),
+            'edit_item' => __('Edit Shortcode', 'dco-shortcodes-menu'),
+            'new_item' => __('New Shortcode', 'dco-shortcodes-menu'),
+            'view' => __('View', 'dco-shortcodes-menu'),
+            'view_item' => __('View Shortcode', 'dco-shortcodes-menu'),
+            'search_items' => __('Search Shortcode', 'dco-shortcodes-menu'),
+            'not_found' => __('No Shortcodes found', 'dco-shortcodes-menu'),
+            'not_found_in_trash' => __('No Shortcodes found in Trash', 'dco-shortcodes-menu'),
         );
 
         $args = array(
             'labels' => $labels,
-            'description' => __('Custom post type for DCO Shortcodes Menu', 'dco-sm'),
+            'description' => __('Custom post type for DCO Shortcodes Menu', 'dco-shortcodes-menu'),
             'public' => false,
             'show_ui' => true,
             'show_in_rest' => false,

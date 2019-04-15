@@ -23,15 +23,15 @@ class DCO_SM_Metaboxes {
         $field_types = $this->get_field_types();
         ?>
 
-        <h4><?php _e('If shortcode has attributes you can add them here.', 'dco-sm'); ?></h4>
+        <h4><?php _e('If shortcode has attributes you can add them here.', 'dco-shortcodes-menu'); ?></h4>
 
         <div class="dco-sm-fields-list">
             <table class="widefat fixed striped">
                 <thead>
                     <tr>
-                        <th><?php _e('Attribute', 'dco-sm'); ?></th>
-                        <th><?php _e('Label', 'dco-sm'); ?></th>
-                        <th><?php _e('Type', 'dco-sm'); ?></th>
+                        <th><?php _e('Attribute', 'dco-shortcodes-menu'); ?></th>
+                        <th><?php _e('Label', 'dco-shortcodes-menu'); ?></th>
+                        <th><?php _e('Type', 'dco-shortcodes-menu'); ?></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -47,8 +47,8 @@ class DCO_SM_Metaboxes {
                                 <td class="type" data-type="<?php echo esc_attr($field['type']); ?>"><?php echo $field['type_title']; ?></td>
                                 <?php $field_data = json_encode($field); ?>
                                 <td>
-                                    <a href="#" class="button button-edit"><?php _e('Edit', 'dco-sm'); ?></a> 
-                                    <a href="#" class="button button-delete"><?php _e('Delete', 'dco-sm'); ?></a>
+                                    <a href="#" class="button button-edit"><?php _e('Edit', 'dco-shortcodes-menu'); ?></a> 
+                                    <a href="#" class="button button-delete"><?php _e('Delete', 'dco-shortcodes-menu'); ?></a>
                                     <textarea name="dco_sm_field[]" style="display: none;"><?php echo $field_data; ?></textarea>
                                 </td>
                             </tr>
@@ -61,9 +61,9 @@ class DCO_SM_Metaboxes {
         </div>
 
         <div class="dco-sm-field-types">
-            <h3 data-edit="<?php esc_attr_e('Edit field', 'dco-sm'); ?>" data-add="<?php esc_attr_e('Add new field', 'dco-sm'); ?>"><?php _e('Add new field', 'dco-sm'); ?></h3>
+            <h3 data-edit="<?php esc_attr_e('Edit field', 'dco-shortcodes-menu'); ?>" data-add="<?php esc_attr_e('Add new field', 'dco-shortcodes-menu'); ?>"><?php _e('Add new field', 'dco-shortcodes-menu'); ?></h3>
             <select data-default="-1">
-                <option value="-1"><?php _e('Select field type', 'dco-sm'); ?></option>
+                <option value="-1"><?php _e('Select field type', 'dco-shortcodes-menu'); ?></option>
                 <?php foreach ($field_types as $id => $type) : ?>
                     <option value="<?php echo $id; ?>" data-type="<?php echo esc_attr($type->get_name()); ?>"><?php echo esc_html($type->get_title()); ?></option>
                 <?php endforeach; ?>
@@ -73,17 +73,17 @@ class DCO_SM_Metaboxes {
                 <div class="dco-sm-field-type dco-sm-field-type<?php echo $id; ?>" data-type="<?php echo esc_attr($type->get_name()); ?>" data-type-title="<?php echo esc_attr($type->get_title()); ?>">
                     <table class="form-table">
                         <tr>
-                            <th><label for="name"><?php _e('Shortcode Attribute', 'dco-sm'); ?></label></th>
+                            <th><label for="name"><?php _e('Shortcode Attribute', 'dco-shortcodes-menu'); ?></label></th>
                             <td>
                                 <input name="name" type="text" class="regular-text required">
-                                <p class="description"><?php _e('Attribute name used in the shortcode', 'dco-sm'); ?></p>
+                                <p class="description"><?php _e('Attribute name used in the shortcode', 'dco-shortcodes-menu'); ?></p>
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="label"><?php _e('Field Label', 'dco-sm'); ?></label></th>
+                            <th><label for="label"><?php _e('Field Label', 'dco-shortcodes-menu'); ?></label></th>
                             <td>
                                 <input name="label" type="text" class="regular-text required">
-                                <p class="description"><?php _e('Label for field in shortcode insert form', 'dco-sm'); ?></p>
+                                <p class="description"><?php _e('Label for field in shortcode insert form', 'dco-shortcodes-menu'); ?></p>
                             </td>
                         </tr>
                         <?php
@@ -126,7 +126,7 @@ class DCO_SM_Metaboxes {
                         endif;
                         ?>
                     </table>
-                    <a href="#" class="dco-sm-add-field button" data-edit="<?php esc_attr_e('Save field', 'dco-sm'); ?>" data-add="<?php esc_attr_e('Add field', 'dco-sm'); ?>"><?php _e('Add field', 'dco-sm'); ?></a>
+                    <a href="#" class="dco-sm-add-field button" data-edit="<?php esc_attr_e('Save field', 'dco-shortcodes-menu'); ?>" data-add="<?php esc_attr_e('Add field', 'dco-shortcodes-menu'); ?>"><?php _e('Add field', 'dco-shortcodes-menu'); ?></a>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -230,9 +230,9 @@ class DCO_SM_Metaboxes {
         wp_enqueue_style('dco-sm', plugins_url('css/dco-sm.css', __FILE__));
         wp_enqueue_script('dco-sm', plugins_url('js/dco-sm.js', __FILE__), array('jquery', 'jquery-ui-sortable'));
         wp_localize_script('dco-sm', 'dco_sm', array(
-            'edit' => esc_html__('Edit', 'dco-sm'),
-            'delete' => esc_html__('Delete', 'dco-sm'),
-            'delete_attr' => esc_html__('Are you sure you want to delete a field for attribute %attr%? This action can not be undone!', 'dco-sm')
+            'edit' => esc_html__('Edit', 'dco-shortcodes-menu'),
+            'delete' => esc_html__('Delete', 'dco-shortcodes-menu'),
+            'delete_attr' => esc_html__('Are you sure you want to delete a field for attribute %attr%? This action can not be undone!', 'dco-shortcodes-menu')
         ) );
     }
 
@@ -243,8 +243,8 @@ class DCO_SM_Metaboxes {
 
     public function add_metaboxes() {
         add_meta_box('submitdiv', __('Publish'), array($this, 'add_submit_metabox'), 'dco_shortcode', 'side');
-        add_meta_box('dco-sm-fields', __('Fields', 'dco-sm'), array($this, 'add_fields_metabox'), 'dco_shortcode', 'normal');
-        add_meta_box('dco-sm-post_types', __('Post Types', 'dco-sm'), array($this, 'add_post_types_metabox'), 'dco_shortcode', 'side');
+        add_meta_box('dco-sm-fields', __('Fields', 'dco-shortcodes-menu'), array($this, 'add_fields_metabox'), 'dco_shortcode', 'normal');
+        add_meta_box('dco-sm-post_types', __('Post Types', 'dco-shortcodes-menu'), array($this, 'add_post_types_metabox'), 'dco_shortcode', 'side');
     }
 
     public function add_submit_metabox() {
@@ -263,11 +263,11 @@ class DCO_SM_Metaboxes {
                     <?php else : ?>
                         <input type="checkbox" name="dco_sm_show_in_menu" <?php checked(get_post_meta($post->ID, '_dco_sm_show_in_menu', true), 1); ?> value="1">
                     <?php endif; ?>
-                    <?php _e('Show in menu', 'dco-sm'); ?>
+                    <?php _e('Show in menu', 'dco-shortcodes-menu'); ?>
                 </p>
                 <p>
-                    <label for="dco_sm_description"><strong><?php _e('Description', 'dco-sm'); ?></strong></label>
-                    <textarea name="dco_sm_description" class="large-text code" rows="3" placeholder="<?php esc_attr_e('Short description (used only for admin list of shortcodes).', 'dco-sm'); ?>"><?php echo get_post_meta($post->ID, '_dco_sm_description', true); ?></textarea>
+                    <label for="dco_sm_description"><strong><?php _e('Description', 'dco-shortcodes-menu'); ?></strong></label>
+                    <textarea name="dco_sm_description" class="large-text code" rows="3" placeholder="<?php esc_attr_e('Short description (used only for admin list of shortcodes).', 'dco-shortcodes-menu'); ?>"><?php echo get_post_meta($post->ID, '_dco_sm_description', true); ?></textarea>
                 </p>
             </div>
             <div id="major-publishing-actions">
@@ -308,7 +308,7 @@ class DCO_SM_Metaboxes {
     public function change_title_placeholder($title) {
         $screen = get_current_screen();
         if ('dco_shortcode' == $screen->post_type) {
-            $title = esc_attr__('Enter shortcode without [] and attributes', 'dco-sm');
+            $title = esc_attr__('Enter shortcode without [] and attributes', 'dco-shortcodes-menu');
         }
         return $title;
     }

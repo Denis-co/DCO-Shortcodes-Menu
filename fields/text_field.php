@@ -10,11 +10,11 @@ class DCO_SM_Field_Text {
     protected $fields;
 
     public function __construct() {
-        $this->title = esc_html__('Text', 'dco-sm');
+        $this->title = esc_html__('Text', 'dco-shortcodes-menu');
         
         $this->fields = array(
             'text' => array(
-                'label' => __('Text', 'dco-sm'),
+                'label' => __('Text', 'dco-shortcodes-menu'),
                 'type' => 'text'
             )
         );

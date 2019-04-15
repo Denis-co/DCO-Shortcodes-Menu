@@ -10,20 +10,20 @@ class DCO_SM_Field_Dropdown {
     protected $fields;
 
     public function __construct() {
-        $this->title = esc_html__('Dropdown', 'dco-sm');
+        $this->title = esc_html__('Dropdown', 'dco-shortcodes-menu');
         
         $this->fields = array(
             'choices' => array(
-                'label' => __('Choices', 'dco-sm'),
+                'label' => __('Choices', 'dco-shortcodes-menu'),
                 'type' => 'textarea',
-                'description' => __('Enter each choice on a new line<br>value or label : value', 'dco-sm')
+                'description' => __('Enter each choice on a new line<br>value or label : value', 'dco-shortcodes-menu')
             ),
             'allow_user_choice' => array(
-                'label' => __('Allow User Choice', 'dco-sm'),
+                'label' => __('Allow User Choice', 'dco-shortcodes-menu'),
                 'type' => 'checkbox',
             ),
             'allow_blank_choice' => array(
-                'label' => __('Allow Blank Choice', 'dco-sm'),
+                'label' => __('Allow Blank Choice', 'dco-shortcodes-menu'),
                 'type' => 'checkbox',
             )
         );
